@@ -20,6 +20,11 @@ app.set('view engine', 'hbs');
 //defines the 'root' directory for public files
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'public, max-age=604800');
+    next();
+});
+
 app.get('/', (req, res) => {
     res.render('index.hbs');
 } );
