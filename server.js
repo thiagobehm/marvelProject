@@ -3,10 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const request = require('request');
+const compression = require('compression');
 
-
-let app = express();
+//port config
 let port = process.env.PORT || 3000;
+let app = express();
 
 //parses the body parameters
 let urlencodedParser = bodyParser.urlencoded({
@@ -17,6 +18,8 @@ let urlencodedParser = bodyParser.urlencoded({
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
+//use Gzip to compress files
+app.use(compression());
 //defines the 'root' directory for public files
 app.use(express.static(path.join(__dirname, 'public')));
 
