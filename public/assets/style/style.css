@@ -1,11 +1,16 @@
 body {
     font-size: 62.5%;
     font-family: 'Roboto', sans;
+    cursor: url('../img/cursor.png'), auto;	
 }
 h1 {
     font-size: 38px;
     font-size: 3.8rem;
     font-size: calc(22px + (60 - 22) * ((100vw - 300px) / (1600 - 300)));
+}
+
+nav {
+    padding: 15px 0;    
 }
 
 .subtitle {
@@ -17,10 +22,6 @@ h1 {
 
 .about-content {
     margin: 50px 0;
-}
-
-nav {
-    padding: 15px 0;    
 }
 
 .hero {
