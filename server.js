@@ -2,8 +2,11 @@ const hbs = require('hbs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const request = require('request');
 const compression = require('compression');
+const marvelAPI = require('marvel-api')
+//file with the keys to Marvel API
+const keys = require('./keys.json');
+const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
 
 //port config
 let port = process.env.PORT || 3000;
@@ -31,6 +34,27 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.render('index.hbs');
 } );
+
+//does the character search 
+app.get('/search', urlencodedParser, (req, res) => {
+    // starts the Marvel API
+    let Marvel = marvelAPI.createClient({
+        publicKey: keys.public_key,
+        privateKey: keys.private_key
+    });
+    //get the value of the query
+    let query = req.query;
+    
+    //do the request to find the user
+    Marvel.characters.findNameStartsWith(query.hero)
+        .then((res) => {
+            console.log(res.data[0]);
+        })
+        .fail((error) => {
+            console.log('Not able to retrieve the result');
+        })
+        .done();
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
