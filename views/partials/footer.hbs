@@ -6,7 +6,7 @@
         <form action="/search" method="GET">
             <div class="col-8 offset-2">
                 <div class="input-group">
-                    <input type="search" name="hero" id="search-bar" class="search" placeholder="Input the hero name...">
+                    <input type="search" name="hero" id="search-bar" class="search"  autocomplete="off" required placeholder="Input the hero name...">
                     <div class="input-group-prepend">
                         <button type="submit" class="btn btn-danger d-none d-sm-block"><span class="input-group-text magnifying-glass"></span></button>
                     </div>
@@ -14,7 +14,7 @@
             </div>
             {{!-- loads a separate button os small devices --}}
             <div class="col-8 offset-2 d-block d-sm-none">
-                <button type="submit" class="btn btn-danger" style="width: 100%"><span class="input-group-text magnifying-glass"></span></button>
+                <button type="submit" class="btn btn-danger"  style="width: 100%"><span class="input-group-text magnifying-glass"></span></button>
             </div>
         </form>
     </div>
