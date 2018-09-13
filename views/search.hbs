@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Marvel Results</title>
+    {{!-- load the stylesheets --}} {{> styles}}
+</head>
+
+<body>
+    <header>
+        {{> menu}}
+    </header>
+    <section id="results" class="search-container">
+        <h3 class="subtitle text-muted">
+            Results Found:
+        </h3>
+        <div class="container text-center">
+        {{#each data}}
+            <article class="results-card">
+                <div class="card-content">
+                    <img src="{{thumbnail.path}}/portrait_xlarge.{{thumbnail.extension}}" alt="">
+                </div>
+                <div class="card-button">
+                    {{name}}
+                </div>
+            </article>
+        {{/each}}
+        </div>
+    </section>
+    <footer class="text-center">
+        {{!-- loads the template of the footer --}} {{> footer}}
+    </footer>
+    {{!-- include the scripts of the page --}} {{> scriptsTemplate}}
+</body>
+
+</html>

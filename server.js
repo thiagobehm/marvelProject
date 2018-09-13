@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const compression = require('compression');
-const marvelAPI = require('marvel-api')
+const marvelAPI = require('marvel-api');
 //file with the keys to Marvel API
 const keys = require('./keys.json');
 const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
@@ -47,13 +47,15 @@ app.get('/search', urlencodedParser, (req, res) => {
     
     //do the request to find the user
     Marvel.characters.findNameStartsWith(query.hero)
-        .then((res) => {
-            console.log(res.data[0]);
+        .then((result) => {
+            res.render('search.hbs', {
+                data : result.data
+            });
         })
         .fail((error) => {
             console.log('Not able to retrieve the result');
-        })
-        .done();
+        });
+    
 });
 
 app.listen(port, () => {

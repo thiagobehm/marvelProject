@@ -17,6 +17,7 @@ nav {
     font-size: 32px;
     font-size: 3.2rem;
     color: #332f2f;
+    text-align: center;
     font-size: calc(18px + (51 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -52,6 +53,40 @@ section#about {
     background-position: center bottom;
     height: 100vh;
     text-align: center;
+}
+
+.search-container {
+    padding: 30px 0;
+}
+
+.results-card {
+    display: inline-block;
+    margin: 15px;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 225px;
+    position: relative;
+}
+
+.card-button {
+    position: absolute;
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+    background: #a11f1f;
+    color: #fff;
+    word-wrap: break-word;
+    display: none;
+}
+
+.results-card:hover img {
+    opacity: 0.2;
+}
+
+.results-card:hover .card-button{
+    display: block;
 }
 
 .about {
