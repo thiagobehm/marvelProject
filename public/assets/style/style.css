@@ -1,5 +1,7 @@
-body {
+html {
     font-size: 62.5%;
+}
+body {
     font-family: 'Roboto', sans;
     cursor: url('../img/cursor.png'), auto;	
 }
@@ -16,13 +18,14 @@ nav {
 .subtitle {
     font-size: 32px;
     font-size: 3.2rem;
+    margin-bottom: 20px;
     color: #332f2f;
     text-align: center;
     font-size: calc(18px + (51 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .about-content {
-    margin: 50px 0;
+    padding: 50px 0;
 }
 
 .hero {
@@ -65,7 +68,7 @@ section#about {
     margin-bottom: 50px;
     width: 150px;
     height: 225px;
-    position: relative;
+    position: relative;  
 }
 
 .card-button {
@@ -73,20 +76,51 @@ section#about {
     width: 100%;
     padding: 5px;
     font-weight: bold;
-    font-size: 0.8rem;
-    letter-spacing: 0.8px;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
     background: #a11f1f;
     color: #fff;
     word-wrap: break-word;
-    display: none;
+    display: block;
+    transition: 1.5s;
+}
+
+.input-group-prepend {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0;
+}
+.input-group-text {
+    padding: 0 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.magnifying-glass {
+    background: url('../img/magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 20px;
+    background-size: 20px;
+}
+.btn {
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .results-card:hover img {
     opacity: 0.2;
+    transition: 1s;
 }
 
 .results-card:hover .card-button{
     display: block;
+    background: #332f2f;
+    font-weight: bolder;
 }
 
 .about {
@@ -105,7 +139,6 @@ input[type='search'] {
     font-size: 20px;
     border: none;
     padding: 20px;
-    margin: 20px 0;
     text-align: center;
     color: #ffaeae;
 }
