@@ -14,20 +14,22 @@
         {{> menu}}
     </header>
     <section id="results" class="search-container">
-        <h3 class="subtitle text-muted">
+        <h3 class="subtitle text-muted" style="font-size: 3.6rem">
             Results Found:
         </h3>
         <div class="container text-center">
-        {{#each data}}
+            {{#each data}}
             <article class="results-card">
-                <div class="card-content">
-                    <img src="{{thumbnail.path}}/portrait_xlarge.{{thumbnail.extension}}" alt="">
-                </div>
-                <div class="card-button">
-                    {{name}}
-                </div>
+                <a href="">
+                    <div class="card-content">
+                        <img src="{{thumbnail.path}}/portrait_xlarge.{{thumbnail.extension}}" alt="">
+                    </div>
+                    <div class="card-button">
+                        {{name}}
+                    </div>
+                </a>
             </article>
-        {{/each}}
+            {{/each}}
         </div>
     </section>
     <footer class="text-center">

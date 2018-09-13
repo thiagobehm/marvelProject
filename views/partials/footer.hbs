@@ -1,12 +1,22 @@
 <h2 class="text-muted subtitle">
-    Search for your favorite character:</h2>
+    Search for your favorite character:
+</h2>
 <div class="footer-content row">
     <div class="container">
-        <div class="col-8 offset-2">
-            <form action="/search" method="GET">
-                <input type="search" name="hero" id="search-bar" class="search" placeholder="Input the hero name...">
-            </form>
-        </div>
+        <form action="/search" method="GET">
+            <div class="col-8 offset-2">
+                <div class="input-group">
+                    <input type="search" name="hero" id="search-bar" class="search" placeholder="Input the hero name...">
+                    <div class="input-group-prepend">
+                        <button type="submit" class="btn btn-danger d-none d-sm-block"><span class="input-group-text magnifying-glass"></span></button>
+                    </div>
+                </div>
+            </div>
+            {{!-- loads a separate button os small devices --}}
+            <div class="col-8 offset-2 d-block d-sm-none">
+                <button type="submit" class="btn btn-danger" style="width: 100%"><span class="input-group-text magnifying-glass"></span></button>
+            </div>
+        </form>
     </div>
     <div class="groot">
         <img src="assets/img/groot.png" alt="Groot Picture">
